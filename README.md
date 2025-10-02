@@ -57,18 +57,24 @@ Truy cập: http://127.0.0.1:8000
 
 ## Phân quyền & Chức năng
 
+
 ### 1. User
+[![User Dashboard](https://i.postimg.cc/fTxP2LFy/user.png)](https://postimg.cc/JGzKt1RC)
 - Đăng nhập, xem dashboard, xem top coin
 - Thêm/xóa coin vào Watchlist cá nhân
 - Xem/sửa thông tin cá nhân
 
+
 ### 2. Admin
+[![Admin User Management](https://i.postimg.cc/vmcFNyfj/admin.png)](https://postimg.cc/d7PxhzWm)
 - Đăng nhập, vào trang `/admin/users`
 - Xem danh sách toàn bộ user
 - Xem watchlist của từng user
 - Sửa thông tin user (trừ superadmin)
 
-### 3. Superadmin
+
+### 3. SuperAdmin
+[![Superadmin User Management](https://i.postimg.cc/vZKSDV6d/superadmin.png)](https://postimg.cc/K1n5H4N9)
 - Đăng nhập, vào trang `/superadmin/users`
 - Xem, thêm, sửa, xóa mọi user (bao gồm cả admin, superadmin)
 - Phân quyền user (user, admin, superadmin)
