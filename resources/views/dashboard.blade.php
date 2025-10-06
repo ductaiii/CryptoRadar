@@ -22,7 +22,7 @@
                         <div id="coin-list" class="flex flex-col gap-4"></div>
                     </div>
 
-                    {{-- Modal Watchlist --}}
+                    {{-- Modal Xem Watchlist --}}
                     <div id="watchlist-modal"
                         class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40">
                         <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl w-full max-w-md p-6 relative">
@@ -33,7 +33,7 @@
                         </div>
                     </div>
 
-                    {{-- Modal Chart --}}
+                    {{-- Modal Chart xem giá trong 7 ngày --}}
                     <div id="chart-modal"
                         class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40">
                         <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl w-full max-w-2xl p-6 relative">
@@ -56,8 +56,8 @@
         const CSRF = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         // --- State ---
-        let COINS = [];       // Top 10 từ CoinGecko
-        let WATCHLIST = [];   // Mảng coin_id từ server
+        let COINS = [];       // lưu danh sách Top 10 từ CoinGecko
+        let WATCHLIST = [];   // lưu danh sách coin_id trong watchlist của user
 
         // --- Fetch Data ---
         async function fetchCoins() {
@@ -78,7 +78,7 @@
 
         // --- Watchlist actions ---
         function isInWatchlist(id) { return WATCHLIST.includes(id); }
-
+        // hàm thêm coin vào watchlist
         async function addToWatchlist(id) {
             const coin = COINS.find(c => c.id === id);
             if (!coin || WATCHLIST.includes(id)) return;

@@ -33,8 +33,10 @@ class WatchlistController extends Controller
         ]);
 
         /** @var User $user */
+        // lấy thông tin user hiện tại
         $user = $request->user();
         if ($user) {
+            // kiểm tra xem có coin_id trong watchlist chưa nếu chưa thì thêm mới
             $exists = $user->watchlist()
                 ->where('coin_id', $data['coin_id'])
                 ->exists();

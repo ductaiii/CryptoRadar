@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
+    // lấy danh sách user . Truyền sang view
     public function index()
     {
         $users = User::with('watchlist')->get();
