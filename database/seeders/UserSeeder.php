@@ -14,12 +14,28 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::create([
-        //     'name' => 'Admin',
-        //     'email' => 'luubi@gmail.com',
-        //     'password' => Hash::make('12345678'),
-        // ]);
-        // tạo 2 user nữa
-        User::factory()->count(2)->create();
+         // 1 user admin
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('12345678'),
+            'role' => 'admin',
+        ]);
+        // 1 user superadmin
+        User::create([
+            'name' => 'Super Admin',
+            'email' => 'superadmin@gmail.com',
+            'password' => Hash::make('12345678'),
+            'role' => 'superadmin',
+        ]);
+       // 1 user role user tạo bằng cách thủ công
+        User::create([
+            'name' => 'User',
+            'email' => 'user@gmail.com',
+            'password' => Hash::make('12345678'),
+            'role' => 'user',
+        ]);
+        // 3 user role được tao bằng factory
+        User::factory()->count(3)->create();
     }
 }

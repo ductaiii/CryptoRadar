@@ -16,11 +16,19 @@ CryptoRadar là một ứng dụng web quản lý watchlist coin, phân quyền 
 ## Cài đặt
 
 ### 1. Clone & Cấu hình
+
 ```sh
 git clone https://github.com/ductaiii/CryptoRadar.git
 cd CryptoRadar
-cp .env.example .env
 ```
+- Nếu dùng **Windows**:
+    ```sh
+    copy .env.example .env
+    ```
+- Nếu dùng **Linux/Mac**:
+   ```sh
+    cp .env.example .env
+    ```
 
 ### 2. Cài đặt Composer & NPM
 ```sh
@@ -33,9 +41,15 @@ npm install
 - Cấu hình DB trong file `.env`
 
 ```env
+DB_CONNECTION=mysql
 DB_DATABASE=cryptoradar
 DB_USERNAME=your_mysql_user
 DB_PASSWORD=your_mysql_password
+```
+
+- **Tạo app key (bắt buộc nếu vừa copy file .env):**
+```sh
+php artisan key:generate
 ```
 
 - Chạy migrate & seed:
@@ -46,6 +60,10 @@ php artisan migrate --seed
 ### 4. Build frontend
 ```sh
 npm run build
+```
+- Hoặc để phát triển giao diện realtime (hot reload):
+```sh
+npm run dev
 ```
 
 ### 5. Khởi động server
@@ -60,14 +78,20 @@ Truy cập: http://127.0.0.1:8000
 
 ### 1. User
 [![User Dashboard](https://i.postimg.cc/fTxP2LFy/user.png)](https://postimg.cc/JGzKt1RC)
-- Đăng nhập, xem dashboard, xem top coin
+- Đăng nhập bằng tài khoản:
+  **Email:** `user@gmail.com`
+  **Mật khẩu:** `12345678`
+- Xem dashboard, xem top coin
 - Thêm/xóa coin vào Watchlist cá nhân
 - Xem/sửa thông tin cá nhân
 
 
 ### 2. Admin
 [![Admin User Management](https://i.postimg.cc/vmcFNyfj/admin.png)](https://postimg.cc/d7PxhzWm)
-- Đăng nhập, vào trang `/admin/users`
+- Đăng nhập bằng tài khoản:
+  **Email:** `admin@gmail.com`
+  **Mật khẩu:** `12345678`
+- Vào trang `/admin/users`
 - Xem danh sách toàn bộ user
 - Xem watchlist của từng user
 - Sửa thông tin user (trừ superadmin)
@@ -75,7 +99,10 @@ Truy cập: http://127.0.0.1:8000
 
 ### 3. SuperAdmin
 [![Superadmin User Management](https://i.postimg.cc/vZKSDV6d/superadmin.png)](https://postimg.cc/K1n5H4N9)
-- Đăng nhập, vào trang `/superadmin/users`
+- Đăng nhập bằng tài khoản:
+  **Email:** `superadmin@gmail.com`
+  **Mật khẩu:** `12345678`
+- Vào trang `/superadmin/users`
 - Xem, thêm, sửa, xóa mọi user (bao gồm cả admin, superadmin)
 - Phân quyền user (user, admin, superadmin)
 - Xem watchlist của mọi user
