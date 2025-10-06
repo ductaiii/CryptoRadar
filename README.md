@@ -61,7 +61,7 @@ php artisan migrate --seed
 ```sh
 npm run build
 ```
-- sau đó chạy giao diện để sử dụng breeze:
+- Sau đó chạy giao diện để sử dụng breeze:
 ```sh
 npm run dev
 ```
