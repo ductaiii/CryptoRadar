@@ -14,23 +14,23 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-         // 1 user admin
-        User::create([
-            'name' => 'Admin',
+            // 1 user admin
+        User::create(attributes: [
+            'name' => 'Tôn Quyền',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('12345678'),
             'role' => 'admin',
         ]);
         // 1 user superadmin
         User::create([
-            'name' => 'Super Admin',
+            'name' => 'Triệu Vân',
             'email' => 'superadmin@gmail.com',
             'password' => Hash::make('12345678'),
             'role' => 'superadmin',
         ]);
-       // 1 user role user tạo bằng cách thủ công
+        // 1 user role user tạo bằng cách thủ công
         User::create([
-            'name' => 'User',
+            'name' => 'Quan Vũ',
             'email' => 'user@gmail.com',
             'password' => Hash::make('12345678'),
             'role' => 'user',
