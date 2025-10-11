@@ -22,7 +22,7 @@ class WatchlistController extends Controller
             ->toArray();
     }
 
-    // Lưu 1 item (tránh trùng)
+    // Lưu 1 item (tránh trùng) add to watchlist
     public function store(Request $request)
     {
         $data = $request->validate([
